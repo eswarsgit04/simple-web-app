@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/eswarsgit04/simple-web-app.git'
+                git branch: 'main', url: 'https://github.com/eswarsgit04/simple-web-app.git'
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
 
     post {
         success {
-            echo 'Server is running on http://localhost:3000'
+            echo '✅ Server is running on http://localhost:3000'
         }
     }
 }
